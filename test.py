@@ -14,7 +14,7 @@ class TestForm(unittest.TestCase):
         with self.client as c:
             response = c.post('/', data={'num_1': '1', 'num_2': '4', 'num_3': '4'})
             self.assertEqual(response.status_code, 200)
-            self.assertIn(response.data, '0.0')
+            self.assertEqual(response.data, '0.0')
 
     def test_form_with_negative_discriminant(self):
         with self.client as c:
